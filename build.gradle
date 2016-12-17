@@ -1,0 +1,27 @@
+group 'com.github'
+version '0.1-SNAPSHOT'
+
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath "gradle.plugin.eu.leontebbens.gradle:chromedriver-updater-plugin:1.6"
+    }
+}
+apply plugin: "eu.leontebbens.gradle.chromedriver-updater"
+apply plugin: 'java'
+
+sourceCompatibility = 1.5
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'junit', name: 'junit', version: '4.11'
+    compile 'org.apache.httpcomponents:httpclient:4.5.2'
+    compile 'com.codeborne:selenide:4.1'
+}
